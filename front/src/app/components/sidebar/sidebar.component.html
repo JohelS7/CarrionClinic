@@ -1,0 +1,82 @@
+<div class="wrapper">
+
+    <!--No muy recomendado para dar estilos, pero no hay tiempo:v-->
+    <style>
+           
+    </style>
+
+    <nav id="sidebar" class="sidebar" style="background-color: #009c8c ">
+        <a class="sidebar-brand" href="index.html">
+      <svg>
+        <use xlink:href="#ion-ios-pulse-strong"></use>
+      </svg>
+      Clinicas Carrión
+    </a>
+        <div class="sidebar-content" style="background-color: #009c8c">
+            <div class="sidebar-user ">
+                <img src="../../../assets/img/logo2.png" class="img-fluid rounded-circle mb-2"  />
+                <div class="font-weight-bold">Carrión</div>
+                <small>Personal-Clinica Carrión</small>
+            </div>
+
+            <ul class="sidebar-nav">
+                <!-- <li class="sidebar-header">
+                    Main
+                </li> -->
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/dashboard']">
+                        <i class="align-middle mr-2 fas fa-fw fa-chart-line"></i> <span class="align-middle">Dashboard</span>
+                    </a>
+                </li>
+
+                
+                
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/usuarios']">
+                        <i class="align-middle mr-2 fas fa-user"></i> <span class="align-middle">Pacientes</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración' || identity.role == 'Ventas'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/clientes']">
+                        <i class="align-middle mr-2 fas fa-user-md fa-fw"></i> <span class="align-middle">Doctores</span>
+                    </a>
+                </li>
+                
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración'||identity.role == 'Inventario'|| identity.role=='Ventas'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/productos']">
+                        <i class="align-middle mr-2 fas fa-syringe fa-fw"></i> <span class="align-middle">Especialidades</span>
+                    </a>
+                    
+                </li>
+               
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración'||identity.role == 'Ventas'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/ventas']">
+                        <i class="align-middle mr-2 fas fa-calendar-plus fa-fw"></i> <span class="align-middle">Citas</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/proveedores']">
+                        <i class="align-middle mr-2 fas fa-procedures fa-fw"></i> <span class="align-middle">Camas</span>
+                    </a>
+                </li>
+              <!-- <li class="sidebar-item" *ngIf="identity.role == 'Administración'||identity.role == 'Inventario'" routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/pedidos']">
+                        <i class="align-middle mr-2 fas fa-clipboard fa-fw"></i> <span class="align-middle">Pedidos</span>
+                    </a>
+                </li>
+                <li class="sidebar-item" *ngIf="identity.role == 'Administración'||identity.role == 'Inventario'"  routerLinkActive="sidebar-item active">
+                    <a class="sidebar-link" [routerLink]="['/entregas']">
+                        <i class="align-middle mr-2 fas fa-clipboard-check fa-fw"></i> <span class="align-middle">Entregas</span>
+                    </a>
+                </li>-->
+                <li class="sidebar-item">
+                    <a class="sidebar-link" (click)="logout()">
+                        <i class="align-middle mr-2 fas fa-sign-out-alt fa-fw"></i> <span class="align-middle">Cerrar Sesión</span>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+</div>
